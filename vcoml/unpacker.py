@@ -1,12 +1,10 @@
-from textwrap import dedent, indent
-from typing import Any
 from re import compile
-from random import randint
-
+from textwrap import dedent
+from typing import Any
 
 STRING = compile(r'^"(?P<content>(\\"|[^"])+)"$')
-INTEGER = compile(r'^\d+$')
-FLOAT = compile(r'^\d+\.\d+$')
+INTEGER = compile(r"^\d+$")
+FLOAT = compile(r"^\d+\.\d+$")
 
 
 class ParsingError(Exception):
@@ -23,6 +21,7 @@ def _get_identifier(value: str) -> str | int | float:
         return float(match.group())
 
     raise ParsingError(f"Invalid identifier: {value}")
+
 
 def _get_blocks(code: str, sym: str) -> list[str]:
     lines = code.split("\n")
@@ -52,6 +51,7 @@ def _get_blocks(code: str, sym: str) -> list[str]:
             break
 
     return blocks
+
 
 def unpack(code: str) -> Any:
     code = code.strip()
