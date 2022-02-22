@@ -52,7 +52,7 @@ members:
 ## Usage
 
 ```py
-from vcoml import unpack
+from vcoml import pack, unpack
 
 
 data = unpack("""
@@ -66,9 +66,11 @@ data = unpack("""
 """)
 
 print(data)
+
+# Re-pack the data
+print(pack(data))
 ```
 
 ## Todo
 
-- Implement packing
 - CLI

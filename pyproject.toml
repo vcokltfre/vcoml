@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vcoml"
-version = "1.0.0"
+version = "1.0.1"
 description = "Imagine a markup language, but worse"
 authors = ["vcokltfre <vcokltfre@gmail.com>"]
 license = "MIT"
