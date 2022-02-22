@@ -9,7 +9,7 @@ def _padded(func):
     return deco
 
 @_padded
-def pack(obj: Any, *, level: int = 0) -> str:
+def pack(obj: Any) -> str:
     if isinstance(obj, bool):
         return "ya" if obj else "na"
     elif isinstance(obj, str):
