@@ -83,5 +83,4 @@ def unpack(code: str) -> Any:
 
         return data
 
-    else:
-        return _get_identifier(code)
+    return _get_identifier(code)
