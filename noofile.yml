@@ -1,0 +1,39 @@
+name: Vcoml
+read:
+- default: null
+  name: repository
+  prompt: Enter repository URL
+- default: null
+  name: author
+  prompt: Enter author name
+- default: null
+  name: description
+  prompt: Enter description
+- default: null
+  name: email
+  prompt: Enter email
+remote: git:vcokltfre/vcoml
+steps:
+- actions:
+  - action: replace
+    dest: '"name" = "$$noo:name"'
+    files:
+    - pyproject.toml
+    src: '"name" = "vcoml"'
+  - action: replace
+    dest: $$var:repository
+    files:
+    - pyproject.toml
+    src: https://github.com/vcokltfre/vcoml
+  - action: replace
+    dest: $$var:author <$$var:email>
+    files:
+    - pyproject.toml
+    src: vcokltfre <vcokltfre@gmail.com>
+  - action: replace
+    dest: '"$$var:description"'
+    files:
+    - pyproject.toml
+    src: '"Imagine a markup language, but worse"'
+  conditions: null
+  name: Update Poetry

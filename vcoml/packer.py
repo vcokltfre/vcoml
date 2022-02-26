@@ -6,7 +6,9 @@ def _padded(func):
     def deco(obj: Any, *, level: int = 0) -> str:
         pad = "  " * level
         return indent(func(obj, level=level), pad)
+
     return deco
+
 
 @_padded
 def pack(obj: Any) -> str:
